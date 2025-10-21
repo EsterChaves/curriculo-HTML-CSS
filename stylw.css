@@ -1,0 +1,196 @@
+/* --- 1. RESET E TIPOGRAFIA GERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Definição da cor de destaque (Verde-Água / Ciano Suave) */
+    --cor-destaque: #5f9ea0; /* Cor da linha superior e títulos */
+    --cor-texto-principal: #333;
+    --cor-fundo-claro: #fff;
+    --cor-fundo-pagina: #f4f4f4;
+    
+    /* Fontes importadas no HTML: Playfair Display (títulos) e Roboto (corpo) */
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-corpo: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    background-color: var(--cor-fundo-pagina);
+    color: var(--cor-texto-principal);
+    padding: 40px 0; /* Mais padding em cima/baixo para centralizar o currículo */
+}
+
+/* --- 2. ESTILO DO CABEÇALHO E NOME --- */
+
+.perfil {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--cor-fundo-claro);
+    padding: 0 40px;
+    position: relative;
+}
+
+/* Linha de destaque superior (como no modelo) */
+.header-line {
+    width: 100%;
+    height: 6px;
+    background-color: var(--cor-destaque);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nome {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5em; /* Nome bem grande */
+    font-weight: 400; /* Leveza na fonte */
+    color: var(--cor-texto-principal);
+    text-align: left;
+    margin-top: 40px; /* Espaço para a linha superior */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc; /* Linha sutil abaixo do nome */
+    display: inline-block; /* Ajusta a largura da borda ao texto */
+}
+
+.contato-info {
+    text-align: left;
+    font-size: 0.85em;
+    color: #666;
+    padding: 10px 0 20px 0;
+    border-bottom: 2px solid #ccc; /* Linha cinza abaixo dos contatos */
+}
+
+/* --- 3. LAYOUT PRINCIPAL (DUAS COLUNAS) --- */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--cor-fundo-claro);
+    padding: 20px 40px 40px 40px;
+    display: flex; /* Habilita as colunas */
+    gap: 40px; /* Espaçamento entre as colunas */
+}
+
+.coluna-principal {
+    flex: 2; /* Ocupa mais espaço (cerca de 60-65%) */
+}
+
+.coluna-secundaria {
+    flex: 1; /* Ocupa menos espaço (cerca de 35-40%) */
+}
+
+/* --- 4. ESTILO DAS SEÇÕES E TÍTULOS --- */
+
+/* Estilo geral de todas as seções */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: var(--fonte-corpo);
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--cor-destaque); /* Cor de destaque nos títulos das seções */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Estilo para listas em seções (Resumo, Objetivo, Habilidades) */
+section ul {
+    list-style: disc; /* Bolinhas, como no modelo */
+    margin-left: 15px;
+    font-size: 0.95em;
+}
+
+section ul li {
+    margin-bottom: 5px;
+}
+
+/* Estilo para contatos/links */
+.secao-contatos p {
+    margin-bottom: 5px;
+}
+.secao-contatos a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+.secao-contatos a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de Formação e Experiência */
+.curso, .cargo {
+    margin-bottom: 20px;
+}
+
+.curso h3, .cargo h3 {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--cor-destaque);
+    margin-bottom: 3px;
+}
+
+.empresa, .localizacao, .detalhe {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+/* --- 5. BARRAS DE IDIOMAS (Como no modelo) --- */
+
+.idioma-item {
+    margin-bottom: 15px;
+}
+
+.idioma-item p {
+    font-size: 0.95em;
+}
+
+.barra-habilidade {
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin: 3px 0;
+}
+
+.preenchimento {
+    height: 100%;
+    background-color: var(--cor-destaque);
+    border-radius: 4px;
+    /* O 'width' é definido inline no HTML (ex: style="width: 50%;") */
+}
+
+.nivel {
+    font-size: 0.8em;
+    color: #999;
+    text-align: right;
+}
+
+/* --- 6. RESPONSIVIDADE (PARA CELULARES) --- */
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    .perfil, .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container {
+        flex-direction: column; /* Colunas viram linhas em telas menores */
+        gap: 20px;
+    }
+    .nome {
+        font-size: 2.5em;
+    }
+}
